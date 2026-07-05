@@ -1,0 +1,16 @@
+name: Print Hello World
+
+on:
+  push:
+    branches:
+      - 'feature/hello-world'
+
+jobs:
+  print-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print hello world file
+        run: echo "$(cat hello_world.txt)"
